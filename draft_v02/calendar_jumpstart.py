@@ -5,6 +5,9 @@ from httplib2 import Http
 from oauth2client import file, client, tools
 
 from tony_util.dir_diagnostics import values
+import pprint
+pp = pprint.PrettyPrinter(indent=4)
+pprint = pp.pprint # usage pprint(stuff)
 
 try:
     import argparse
@@ -25,14 +28,18 @@ if not credz or credz.invalid:
 
 CAL = build('calendar', 'v3', http=credz.authorize(Http()))
 
-GMT_OFF = '-8:00'
+GMT_OFF = '-08:00'
 EVENT = {
     'summary': 'Dinner with friends',
     'start': {'dateTime': f'2021-02-18T19:00:00{GMT_OFF}'},
     'end': {'dateTime': f'2021-02-18T22:00:00{GMT_OFF}'},
+    'attendees': [
+        {'email': 'employee01@tony-held.com'},
+        {'email': 'tony.held@gmail.com'},
+    ]
 }
 
 e = CAL.events().insert(calendarId='primary',
                         sendNotifications=True, body=EVENT).execute()
 
-values(e, mode='plain-text', print_=True)
+pprint(e)
