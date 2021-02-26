@@ -14,7 +14,10 @@ pp = pprint.PrettyPrinter(indent=4)  # usage pp.pprint(stuff)
 
 
 def get_calendar_service():
-    """Return a google API service associated with a scope and google oath_key."""
+    """Return a google API service associated with a scope and google oath_key.
+
+    service : googleapiclient.discovery.Resource
+    """
 
     # 1.  Specify one or more scopes (strings or iterable)
     #     that you wish the google user to authorize
@@ -35,11 +38,12 @@ def get_calendar_service():
     api = 'calendar'
     version = 'v3'
     service = build(api, version, http=credz.authorize(Http()))
+    print(type(service))
 
     return service
 
 def list_calendars(service):
-    print('Getting list of calendars\n')
+    print('\nGetting list of calendars\n')
     calendars_result = service.calendarList().list().execute()
 
     calendars = calendars_result.get('items', [])
@@ -57,7 +61,7 @@ def list_calendars(service):
     pp.pprint(calendars_result)
 
 def list_events(service):
-    print('Getting list of events\n')
+    print('\nGetting list of events\n')
 
     # Call the Calendar API
     now = datetime.utcnow().isoformat() + 'Z'  # 'Z' indicates UTC time
@@ -76,7 +80,7 @@ def list_events(service):
     pp.pprint(events)
 
 def update_event(service):
-    print('Updating event\n')
+    print('\nUpdating event\n')
 
     # update the event to tomorrow 9 AM IST
 
@@ -102,6 +106,22 @@ def update_event(service):
     print("starts at: ", event_result['start']['dateTime'])
     print("ends at: ", event_result['end']['dateTime'])
 
+def scratch01(service):
+    """
+    service: googleapiclient.discovery.Resource
+    """
+
+    print('\nGetting specific calendar\n')
+
+    calendar = service.calendars().get(calendarId='primary').execute()
+    print(calendar)
+    pp.pprint(calendar)
+
+    sec_cal = 'og1pc1pu59vhkrrsce4ub4llvo@group.calendar.google.com'
+    calendar2 = service.calendars().get(calendarId=sec_cal).execute()
+    print(calendar2)
+    pp.pprint(calendar2)
+
 
 if __name__ == '__main__':
     my_service = get_calendar_service()
@@ -109,3 +129,4 @@ if __name__ == '__main__':
     list_calendars(my_service)
     list_events(my_service)
     update_event(my_service)
+    scratch01(my_service)

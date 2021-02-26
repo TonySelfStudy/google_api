@@ -1,11 +1,14 @@
-<googleapiclient.discovery.Resource object at 0x000001A7A6DB7880>
+<class 'googleapiclient.discovery.Resource'>
+<googleapiclient.discovery.Resource object at 0x000002881CA7B700>
+
 Getting list of calendars
 
 1706.fawn.gate@gmail.com, 	1706.fawn.gate@gmail.com, 	Primary
 Holidays in United States, 	en.usa#holiday@group.v.calendar.google.com, 	
 Birthdays, 	addressbook#contacts@group.v.calendar.google.com, 	
+Secondary Cal, 	og1pc1pu59vhkrrsce4ub4llvo@group.calendar.google.com, 	
 
-{   'etag': '"p330eveunje0uu0g"',
+{   'etag': '"p324873dhuu1eu0g"',
     'items': [   {   'accessRole': 'owner',
                      'backgroundColor': '#9fe1e7',
                      'colorId': '14',
@@ -54,36 +57,31 @@ Birthdays, 	addressbook#contacts@group.v.calendar.google.com,
                      'kind': 'calendar#calendarListEntry',
                      'selected': True,
                      'summary': 'Birthdays',
+                     'timeZone': 'America/Los_Angeles'},
+                 {   'accessRole': 'owner',
+                     'backgroundColor': '#fa573c',
+                     'colorId': '4',
+                     'conferenceProperties': {   'allowedConferenceSolutionTypes': [   'hangoutsMeet']},
+                     'defaultReminders': [],
+                     'description': 'Added by tony2/24/21 at 8:23',
+                     'etag': '"1614183804414000"',
+                     'foregroundColor': '#000000',
+                     'id': 'og1pc1pu59vhkrrsce4ub4llvo@group.calendar.google.com',
+                     'kind': 'calendar#calendarListEntry',
+                     'selected': True,
+                     'summary': 'Secondary Cal',
                      'timeZone': 'America/Los_Angeles'}],
     'kind': 'calendar#calendarList',
-    'nextSyncToken': 'CMDvu9ebge8CEhgxNzA2LmZhd24uZ2F0ZUBnbWFpbC5jb20='}
+    'nextSyncToken': 'CIiDjbH3gu8CEhgxNzA2LmZhd24uZ2F0ZUBnbWFpbC5jb20='}
+
 Getting list of events
 
 Getting List of next 10 events
-2021-02-23T19:00:00-08:00 Dinner with friends
 2021-02-24 wed all day event
+2021-02-24T19:30:00-08:00 Updated Automating calendar
 2021-02-25 Thurs all day event
 2021-02-26 friday all day event
-2021-02-27T14:00:00-08:00 Saturday Snacks
-[   {   'attendees': [   {   'email': 'employee01@tony-held.com',
-                             'responseStatus': 'needsAction'}],
-        'created': '2021-02-23T19:15:13.000Z',
-        'creator': {'email': '1706.fawn.gate@gmail.com', 'self': True},
-        'end': {'dateTime': '2021-02-23T22:00:00-08:00'},
-        'etag': '"3228215427306000"',
-        'eventType': 'default',
-        'htmlLink': 'https://www.google.com/calendar/event?eid=bTdtam92a3R0MjkzaW5lNmR2aWZwamwwbTAgMTcwNi5mYXduLmdhdGVAbQ',
-        'iCalUID': 'm7mjovktt293ine6dvifpjl0m0@google.com',
-        'id': 'm7mjovktt293ine6dvifpjl0m0',
-        'kind': 'calendar#event',
-        'organizer': {'email': '1706.fawn.gate@gmail.com', 'self': True},
-        'reminders': {'useDefault': True},
-        'sequence': 0,
-        'start': {'dateTime': '2021-02-23T19:00:00-08:00'},
-        'status': 'confirmed',
-        'summary': 'Dinner with friends',
-        'updated': '2021-02-23T19:15:13.653Z'},
-    {   'created': '2021-02-23T23:11:55.000Z',
+[   {   'created': '2021-02-23T23:11:55.000Z',
         'creator': {'email': '1706.fawn.gate@gmail.com', 'self': True},
         'end': {'date': '2021-02-25'},
         'etag': '"3228243830516000"',
@@ -100,6 +98,26 @@ Getting List of next 10 events
         'summary': 'wed all day event',
         'transparency': 'transparent',
         'updated': '2021-02-23T23:11:55.258Z'},
+    {   'created': '2021-02-24T00:01:00.000Z',
+        'creator': {'email': '1706.fawn.gate@gmail.com', 'self': True},
+        'description': 'This is a tutorial example of automating google '
+                       'calendar with python, updated time.',
+        'end': {   'dateTime': '2021-02-24T21:30:00-08:00',
+                   'timeZone': 'Asia/Kolkata'},
+        'etag': '"3228367671690000"',
+        'eventType': 'default',
+        'htmlLink': 'https://www.google.com/calendar/event?eid=MjdtcHJkdDRvM2VtYTJwNjNwcHRpMmpncmIgMTcwNi5mYXduLmdhdGVAbQ',
+        'iCalUID': '27mprdt4o3ema2p63ppti2jgrb@google.com',
+        'id': '27mprdt4o3ema2p63ppti2jgrb',
+        'kind': 'calendar#event',
+        'organizer': {'email': '1706.fawn.gate@gmail.com', 'self': True},
+        'reminders': {'useDefault': True},
+        'sequence': 2,
+        'start': {   'dateTime': '2021-02-24T19:30:00-08:00',
+                     'timeZone': 'Asia/Kolkata'},
+        'status': 'confirmed',
+        'summary': 'Updated Automating calendar',
+        'updated': '2021-02-24T16:23:55.845Z'},
     {   'created': '2021-02-23T23:12:01.000Z',
         'creator': {'email': '1706.fawn.gate@gmail.com', 'self': True},
         'end': {'date': '2021-02-26'},
@@ -133,20 +151,30 @@ Getting List of next 10 events
         'status': 'confirmed',
         'summary': 'friday all day event',
         'transparency': 'transparent',
-        'updated': '2021-02-23T23:12:10.884Z'},
-    {   'created': '2021-02-24T00:01:00.000Z',
-        'creator': {'email': '1706.fawn.gate@gmail.com', 'self': True},
-        'end': {'dateTime': '2021-02-27T16:00:00-08:00'},
-        'etag': '"3228249721008000"',
-        'eventType': 'default',
-        'htmlLink': 'https://www.google.com/calendar/event?eid=MjdtcHJkdDRvM2VtYTJwNjNwcHRpMmpncmIgMTcwNi5mYXduLmdhdGVAbQ',
-        'iCalUID': '27mprdt4o3ema2p63ppti2jgrb@google.com',
-        'id': '27mprdt4o3ema2p63ppti2jgrb',
-        'kind': 'calendar#event',
-        'organizer': {'email': '1706.fawn.gate@gmail.com', 'self': True},
-        'reminders': {'useDefault': True},
-        'sequence': 0,
-        'start': {'dateTime': '2021-02-27T14:00:00-08:00'},
-        'status': 'confirmed',
-        'summary': 'Saturday Snacks',
-        'updated': '2021-02-24T00:01:00.504Z'}]
+        'updated': '2021-02-23T23:12:10.884Z'}]
+
+Updating event
+
+updated event
+id:  27mprdt4o3ema2p63ppti2jgrb
+summary:  Updated Automating calendar
+starts at:  2021-02-24T19:30:00-08:00
+ends at:  2021-02-24T21:30:00-08:00
+
+Getting specific calendar
+
+{'kind': 'calendar#calendar', 'etag': '"WjFpr7s39eUXtRI4Ac0v8l8fBaI"', 'id': '1706.fawn.gate@gmail.com', 'summary': '1706.fawn.gate@gmail.com', 'timeZone': 'America/Los_Angeles', 'conferenceProperties': {'allowedConferenceSolutionTypes': ['hangoutsMeet']}}
+{   'conferenceProperties': {   'allowedConferenceSolutionTypes': [   'hangoutsMeet']},
+    'etag': '"WjFpr7s39eUXtRI4Ac0v8l8fBaI"',
+    'id': '1706.fawn.gate@gmail.com',
+    'kind': 'calendar#calendar',
+    'summary': '1706.fawn.gate@gmail.com',
+    'timeZone': 'America/Los_Angeles'}
+{'kind': 'calendar#calendar', 'etag': '"8a7-KhLBGoEjJyNSW4iHqDsqBVY"', 'id': 'og1pc1pu59vhkrrsce4ub4llvo@group.calendar.google.com', 'summary': 'Secondary Cal', 'description': 'Added by tony2/24/21 at 8:23', 'timeZone': 'America/Los_Angeles', 'conferenceProperties': {'allowedConferenceSolutionTypes': ['hangoutsMeet']}}
+{   'conferenceProperties': {   'allowedConferenceSolutionTypes': [   'hangoutsMeet']},
+    'description': 'Added by tony2/24/21 at 8:23',
+    'etag': '"8a7-KhLBGoEjJyNSW4iHqDsqBVY"',
+    'id': 'og1pc1pu59vhkrrsce4ub4llvo@group.calendar.google.com',
+    'kind': 'calendar#calendar',
+    'summary': 'Secondary Cal',
+    'timeZone': 'America/Los_Angeles'}
