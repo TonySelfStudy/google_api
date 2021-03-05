@@ -14,7 +14,10 @@ The project is evolving from scratch code to a more useful form as
 side-project time allows ...
 
 ## Usage
-To be expanded upon as code develops ...
+This app requires tokens and google access keys that are not shared
+on github.  As such, this code will only run on my machine.
+
+However, you can still review the code for frameworks.
 
 ## License
 
